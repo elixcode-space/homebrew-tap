@@ -7,20 +7,20 @@ class ElixCtl < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/elixcode-space/elixctl/releases/download/v0.1.0/elixctl_0.1.0_darwin_amd64.tar.gz"
-      sha256 ""
+      sha256 :unneeded
     else
       url "https://github.com/elixcode-space/elixctl/releases/download/v0.1.0/elixctl_0.1.0_darwin_arm64.tar.gz"
-      sha256 ""
+      sha256 :unneeded
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/elixcode-space/elixctl/releases/download/v0.1.0/elixctl_0.1.0_linux_amd64.tar.gz"
-      sha256 ""
+      sha256 :unneeded
     else
       url "https://github.com/elixcode-space/elixctl/releases/download/v0.1.0/elixctl_0.1.0_linux_arm64.tar.gz"
-      sha256 ""
+      sha256 :unneeded
     end
   end
 
