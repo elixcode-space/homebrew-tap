@@ -31,13 +31,4 @@ class ElixCtl < Formula
   test do
     assert_match "elixctl", shell_output("#{bin}/elixctl --help")
   end
-
-  # Windows users: download from GitHub releases
-  # elixctl_0.1.0_windows_amd64.zip from:
-  #   https://github.com/elixcode-space/elixctl/releases/download/v0.1.0/elixctl_0.1.0_windows_amd64.zip
-  # Or use Scoop:
-  #   scoop bucket add elixcode https://github.com/elixcode-space/scoop-bucket
-  #   scoop install elixctl
-  # Or use Winget:
-  #   winget install elixcode.elixctl
 end

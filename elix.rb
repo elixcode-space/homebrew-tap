@@ -1,4 +1,4 @@
-class ElixCli < Formula
+class Elix < Formula
   desc "Elixcode user CLI — OpenCode/Cursor/Claude Code-style AI coding agent"
   homepage "https://github.com/elixcode-space/elix"
   version "0.1.0"
@@ -31,13 +31,4 @@ class ElixCli < Formula
   test do
     assert_match "elix", shell_output("#{bin}/elix --help")
   end
-
-  # Windows users: download from GitHub releases
-  # elix-x86_64-pc-windows-msvc.zip from:
-  #   https://github.com/elixcode-space/elix/releases/download/v0.1.0/elix-x86_64-pc-windows-msvc.zip
-  # Or use Scoop:
-  #   scoop bucket add elixcode https://github.com/elixcode-space/scoop-bucket
-  #   scoop install elix
-  # Or use Winget:
-  #   winget install elixcode.elix
 end

@@ -11,11 +11,11 @@ Homebrew formulae for [Elixcode](https://elixcode.space) CLI tools.
 brew tap elixcode-space/homebrew-tap
 
 # Install both CLIs
-brew install elix-cli elixctl-cli
+brew install elix elixctl
 
 # Or individually:
-# brew install elix-cli      # user CLI (Rust)
-# brew install elixctl-cli   # platform CLI (Go)
+# brew install elix      # user CLI (Rust)
+# brew install elixctl   # platform CLI (Go)
 ```
 
 ### Windows
