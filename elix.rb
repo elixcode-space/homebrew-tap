@@ -1,4 +1,4 @@
-class Elix <Formula
+class Elixir < Formula
   desc "Elixcode user CLI — OpenCode/Cursor/Claude Code-style AI coding agent"
   homepage "https://github.com/elixcode-space/elix"
   version "0.1.0"
@@ -24,20 +24,8 @@ class Elix <Formula
     end
   end
 
-  on_linux do
-    depends_on "openssl@3" => :build
-    depends_on "protobuf" => :build
-  end
-
   def install
-    if OS.mac?
-      binary = Hardware::CPU.arm? ? "elix-aarch64" : "elix-x86_64"
-      dir = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
-    else
-      binary = Hardware::CPU.arm? ? "elix-aarch64" : "elix-x86_64"
-      dir = "unknown-linux-gnu"
-    end
-    bin.install "#{binary}-#{dir}/elix"
+    bin.install "elix"
   end
 
   test do
