@@ -16,11 +16,11 @@ brew trust --formula elixcode-space/tap/elix-cli
 brew trust --formula elixcode-space/tap/elix-clictl
 
 # Install both CLIs
-brew install elixcode elixcodectl
+brew install elixcode elixctl
 
 # Or individually:
 # brew install elixcode      # user CLI (Rust)
-# brew install elixcodectl   # platform CLI (Go)
+# brew install elixctl   # platform CLI (Go)
 ```
 
 ### Windows
