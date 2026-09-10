@@ -1,4 +1,4 @@
-class Elixir < Formula
+class ElixCli < Formula
   desc "Elixcode user CLI — OpenCode/Cursor/Claude Code-style AI coding agent"
   homepage "https://github.com/elixcode-space/elix"
   version "0.1.0"
