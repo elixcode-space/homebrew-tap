@@ -9,6 +9,11 @@ Homebrew formulae for [Elixcode](https://elixcode.space) CLI tools.
 ```bash
 # Add the tap
 brew tap elixcode-space/homebrew-tap
+brew tap --repair 2>/dev/null || true
+
+# If prompted about untrusted tap, run:
+brew trust --formula elixcode-space/tap/elix
+brew trust --formula elixcode-space/tap/elixctl
 
 # Install both CLIs
 brew install elix elixctl
