@@ -1,4 +1,4 @@
-class ElixCtl < Formula
+class ElixirCtlCli < Formula
   desc "Elixcode platform CLI — fleet management, deployment, and observability"
   homepage "https://github.com/elixcode-space/elixctl"
   license "MIT"

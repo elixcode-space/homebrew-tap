@@ -12,15 +12,15 @@ brew tap elixcode-space/homebrew-tap
 brew tap --repair 2>/dev/null || true
 
 # If prompted about untrusted tap, run:
-brew trust --formula elixcode-space/tap/elix
-brew trust --formula elixcode-space/tap/elixctl
+brew trust --formula elixcode-space/tap/elix-cli
+brew trust --formula elixcode-space/tap/elix-clictl
 
 # Install both CLIs
-brew install elix elixctl
+brew install elix-cli elixctl-cli
 
 # Or individually:
-# brew install elix      # user CLI (Rust)
-# brew install elixctl   # platform CLI (Go)
+# brew install elix-cli      # user CLI (Rust)
+# brew install elixctl-cli   # platform CLI (Go)
 ```
 
 ### Windows
