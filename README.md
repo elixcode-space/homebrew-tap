@@ -1,6 +1,8 @@
-# elixcode Homebrew Tap
+# Elixcode Homebrew Tap
 
-Homebrew formulae for [Elixcode](https://elixcode.space) CLI tools.
+Homebrew formulae for the ElixCode platform CLIs:
+- `elixcode` — End-user agentic coding CLI (Rust)
+- `elixctl` — Platform/ops CLI (Go)
 
 ## Installation
 
@@ -9,18 +11,17 @@ Homebrew formulae for [Elixcode](https://elixcode.space) CLI tools.
 ```bash
 # Add the tap
 brew tap elixcode-space/homebrew-tap
-brew tap --repair 2>/dev/null || true
 
 # If prompted about untrusted tap, run:
-brew trust --formula elixcode-space/tap/elix-cli
-brew trust --formula elixcode-space/tap/elix-clictl
+brew trust --formula elixcode-space/tap/elixcode
+brew trust --formula elixcode-space/tap/elixctl
 
 # Install both CLIs
 brew install elixcode elixctl
 
 # Or individually:
-# brew install elixcode      # user CLI (Rust)
-# brew install elixctl   # platform CLI (Go)
+# brew install elixcode    # user CLI (Rust)
+# brew install elixctl  # platform CLI (Go)
 ```
 
 ### Windows
@@ -30,57 +31,72 @@ brew install elixcode elixctl
 ```powershell
 # Add bucket and install
 scoop bucket add elixcode https://github.com/elixcode-space/scoop-bucket
-scoop install elix
+scoop install elixcode
 scoop install elixctl
 ```
 
 #### Winget
 
 ```powershell
-winget install elixcode.elix
+winget install elixcode.elixcode
 winget install elixcode.elixctl
 ```
 
 #### Direct Download (Windows)
 
 Download from GitHub Releases:
-- `elix`: https://github.com/elixcode-space/elix/releases
+- `elixcode`: https://github.com/elixcode-space/elixcode/releases
 - `elixctl`: https://github.com/elixcode-space/elixctl/releases
 
 ## Usage
 
 ```bash
-# elix — connect to public gateway by default
+# elixcode — connect to public gateway by default
 export ELIXCODE_API_KEY="your-api-key"
-elix chat          # AI coding agent
-elix ask "question"  # one-shot
+
+# User CLI (Rust)
+elixcode chat               # Interactive AI coding agent
+elixcode ask "question"     # One-shot question
+elixcode run "task"         # Autonomous agent task
 
 # elixctl — platform management
-elixctl workers     # list fleet workers
-elixctl health      # gateway health check
-elixctl deploy --target gateway --version 0.1.0  # deploy
+elixctl workers             # List fleet workers
+elixctl health              # Gateway health check
+elixctl deploy --target gateway --version 0.9.2
+
+# JavaScript CLIs (alternative)
+npx elixcode chat
+deno run -A @elixcode/elixcode chat
+bunx elixcode-bun chat
 
 # Self-hosted gateway (Elixir escript)
 mix deps.get
 mix escript.build
-./elixircode --gateway 4000
+./elixcode --gateway 4000
 ```
 
 ## Supported Platforms
 
-| CLI | macOS (Intel/ARM) | Linux (x86_64/ARM64) | Windows (x86_64/ARM64) |
+| CLI | macOS (Intel/ARM) | Linux (x86_64/ARM64) | Windows (x86_64) |
 |-----|:-:|:-:|:-:|
-| `elix`      | ✅ | ✅ | ✅ (zip) |
-| `elixctl`   | ✅ | ✅ | ✅ (zip) |
-| `elixircode`| ✅ | ✅ | ❌ (Elixir not yet on Windows) |
+| `elixcode` (Rust) | ✅ | ✅ | ✅ (zip) |
+| `elixctl` (Go) | ✅ | ✅ | ✅ (zip) |
+| `elixcode` (JS/TS) | ✅ | ✅ | ✅ |
 
 ## Release Flow
 
 When publishing a new version:
 
 ```bash
-git tag v0.1.1
-git push origin v0.1.1
-# GitHub Actions will build and publish to GitHub Releases
-# The brew/scoop formulas will pick up the new version on next `brew upgrade`
+# For Rust CLI (in clis/elixcode repo)
+git tag rust-v0.9.2
+git push origin rust-v0.9.2
+# GitHub Actions will build binaries and publish to GitHub Releases
+
+# For JS CLI (same submodule repo)
+git tag js-v0.9.2
+git push origin js-v0.9.2
+# GitHub Actions will publish to npm and JSR
 ```
+
+The brew formulas will pick up new release versions on next `brew upgrade`.
