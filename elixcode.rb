@@ -1,7 +1,7 @@
-class ElixirCode < Formula
+class Elixcode < Formula
   desc "Elixcode user CLI — OpenCode/Cursor/Claude Code-style AI coding agent"
   homepage "https://github.com/elixcode-space/elixcode"
-  version "0.1.0"
+  version "0.9.2"
   license "MIT"
 
   on_macos do
